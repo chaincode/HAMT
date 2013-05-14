@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=640" />
+
+    <link rel="stylesheet" href="stylesheets/core.css" media="screen"/>
+    <link rel="stylesheet" href="stylesheets/mobile.css" media="handheld, only screen and (max-device-width:640px)"/>
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css"/>
+
+    <script type="text/javascript" src="javascripts/modernizr.js"></script>
+    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+    <script type="text/javascript" src="javascripts/headsmart.min.js"></script>
+    <script type="text/javascript">
+      $(document).ready(function () {
+        $('#main_content').headsmart()
+      })
+    </script>
+    <title>C++ Templates for Hash Array Mapped Trie by chaelim</title>
+  </head>
+
+  <body>
+    <a id="forkme_banner" href="https://github.com/chaelim/HAMT">View on GitHub</a>
+    <div class="shell">
+
+      <header>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <h1>C++ Templates for Hash Array Mapped Trie</h1>
+            <h2>Hash Array Mapped Trie (C++ Templates)</h2>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+      </header>
+
+      <section id="downloads">
+        <span class="inner">
+          <a href="https://github.com/chaelim/HAMT/zipball/master" class="zip"><em>download</em> .ZIP</a><a href="https://github.com/chaelim/HAMT/tarball/master" class="tgz"><em>download</em> .TGZ</a>
+        </span>
+      </section>
+
+
+      <span class="banner-fix"></span>
+
+
+      <section id="main_content">
+        <h1>C++ Template class implementation of Hash Array Mapped Trie</h1>
+
+<p>Do you want space-efficient and fast hash table? HAMT is just here for you. Based on the paper <a href="http://lampwww.epfl.ch/papers/idealhashtrees.pdf">Ideal Hash Trees by Phil Bagwell</a>, and as the title stated, it has really ideal features as a hash table as below.</p>
+
+<h2>Features</h2>
+
+<ul>
+<li>No initial root hash table required.
+<em>(Empty hash table just takes 8 bytes in 32 bit build or 12 bytes in 64 bit build.)</em>
+</li>
+<li>No stop the world rehashing.</li>
+<li>Faster and smaller.</li>
+<li>Constant add/delete O(1) operations</li>
+<li>C++ Template implementation can be easily used to any data type.</li>
+<li>32 bit hash key and 32 bit bitmap to index subhash array.</li>
+<li>32 bit integer and string (ANSI and Unicode) hash key templates are included.</li>
+<li>Expected tree depth: <img src="http://latex.codecogs.com/gif.latex?O%28%5Clog_%7B2%5EW%7D%28n%29%29" alt="equation">.<br>
+ w = 5<br>
+ n : number of elements stored in the trie</li>
+<li>Hamming weight of bitmap can be caculated using POPCNT(Population count) CPU intruction (introduced in Nehalem-base and Barcelona microarchitecture CPU). POPCNT can speed up overall performance about 10%.</li>
+</ul><h2>Test program build notes</h2>
+
+<ul>
+<li>Open and compile Test\IdealHash.sln</li>
+<li>To enable POPCNT CPU instruction, change 0 to 1 in "#define SSE42_POPCNT 0". POPCNT is SSE4 CPU instruction start supported since Intel Nehalem and AMD Barcelona.</li>
+<li>References on POPCNT:
+
+<ul>
+<li><a href="http://en.wikipedia.org/wiki/SSE4#POPCNT_and_LZCNT">http://en.wikipedia.org/wiki/SSE4#POPCNT_and_LZCNT</a></li>
+<li><a href="http://developer.amd.com/community/blog/barcelona-processor-feature-advanced-bit-manipulation-abm/">http://developer.amd.com/community/blog/barcelona-processor-feature-advanced-bit-manipulation-abm/</a></li>
+</ul>
+</li>
+</ul><h2>More information</h2>
+
+<ul>
+<li>
+<a href="http://lampwww.epfl.ch/papers/idealhashtrees.pdf">Ideal Hash Trees by Phil Bagwell</a>.</li>
+<li>
+<a href="http://en.wikipedia.org/wiki/Hash_array_mapped_trie">Wikipedia on Hash array mapped trie</a>.</li>
+<li>
+<a href="http://www.altdevblogaday.com/2011/03/22/ideal-hash-tries-an-implementation-in-c/">Ideal Hash Tries: an implementation in C++</a>.</li>
+<li><a href="http://en.wikipedia.org/wiki/SSE4#POPCNT_and_LZCNT">POPCNT Instruction</a></li>
+</ul>
+      </section>
+
+      <footer>
+        <span class="ribbon-outer">
+          <span class="ribbon-inner">
+            <p>this project by <a href="https://github.com/chaelim">chaelim</a> can be found on <a href="https://github.com/chaelim/HAMT">GitHub</a></p>
+          </span>
+          <span class="left-tail"></span>
+          <span class="right-tail"></span>
+        </span>
+        <p>Generated with <a href="http://pages.github.com">GitHub Pages</a> using Merlot</p>
+        <span class="octocat"></span>
+      </footer>
+
+    </div>
+
+    
+  </body>
+</html>
